@@ -8,7 +8,6 @@ function Nav() {
     <div className='nav nav_black'>
 
       <div className='nav_content'>
-
         <img 
         className='nav_logo'
         src={HeaderLogo} 
@@ -22,7 +21,6 @@ function Nav() {
         />
 
       </div>
-
     </div>
   )
 }
