@@ -21,7 +21,7 @@ useEffect(() => {
 }, []);
 
   return (
-    // only show background colour when the user scrolls though 100% of the screen
+    //only show background colour when the user scrolls though 100% of the screen
     <div className={`nav ${show && 'nav_black'}`}>
 
       <div className='nav_content'>
