@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Banner.css'
+import requests from './requests';
+import axios from './axios'
 
 function Banner() {
+
+    const [movie, setMovie] = useState([]);
+
+    useEffect(() => {
+        async function fetchData(){
+            const request = await axios.get(requests.fetchNetflixOriginals);
+            setMovie(
+                // generate a random result
+                request.data.results[Math.floor(Math.random() * request.data.results.length - 1)]
+            );
+            return request;
+        }
+        fetchData();
+    }, []);
+
+    console.log(movie)
 
     // after a certain character count, cut off the string
     function truncate(string, n){
@@ -11,7 +29,7 @@ function Banner() {
   return (
     <header className='banner' style={{
         backgroundSize:"cover",
-        backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Black_flag.svg/1200px-Black_flag.svg.png')`,
+        backgroundImage: `url('https://image.tmdb.org/t/p/original/${movie?.backdrop_path}')`,
         backgroundPosition: "center center "}
         }>
     
