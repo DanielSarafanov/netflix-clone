@@ -16,7 +16,7 @@
 
 .row_poster{
     cursor: pointer;
-    max-height: 100px;
+    max-height: 150px;
     object-fit: contain;
     margin-right: 20px;
     width: 100%;
